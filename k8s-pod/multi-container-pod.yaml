@@ -1,0 +1,20 @@
+# Kubernetes Version we are using.
+apiVersion: v1
+# Type of kubernetes component
+kind: Pod
+# Information about your component - name, unique identifier -> labels
+metadata:
+  name: multi-container-pod
+  labels:
+    app: multi-container-pod-app
+# Signifies actual structure and functionality for your component
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx:latest
+      ports:
+        - containerPort: 80
+    - name: mongo-db-container
+      image: mongo:latest
+      ports:
+        - containerPort: 27017

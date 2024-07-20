@@ -1,0 +1,16 @@
+# Kubernetes Version we are using.
+apiVersion: v1
+# Type of kubernetes component
+kind: Pod
+# Information about your component - name, unique identifier -> labels
+metadata:
+  name: single-container-pod
+  labels:
+    app: single-container-pod-app
+# Signifies actual structure and functionality for your component
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx:latest
+      ports:
+        - containerPort: 80

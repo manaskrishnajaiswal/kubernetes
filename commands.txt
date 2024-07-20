@@ -1,0 +1,26 @@
+# Start/check Kubernetes service Verification
+# Check Minikube is running or not
+CMD 1: minikube version
+# Check kubectl is running or not
+CMD 2: kubectl version
+
+# If kubectl cmd shows error, then start minikube cluster
+CMD 3: minikube start
+
+##################################################################################################
+# Pod Commands
+# 1) Create Pod Component.
+CMD: kubectl create -f single-container-pod.yaml
+
+# 2) Check status of pod
+CMD: kubectl get pods
+CMD: kubectl get pods -o wide
+
+# 3) Getting detail information about particular pod
+CMD: kubectl describe pod single-container-pod
+
+# 4) Shell into running pod/container
+CMD: kubectl exec -it single-container-pod --container nginx-container bash
+
+# 5) Delete Pod Component.
+CMD: kubectl delete -f single-container-pod.yaml
