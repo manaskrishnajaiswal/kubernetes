@@ -24,3 +24,39 @@ CMD: kubectl exec -it single-container-pod --container nginx-container bash
 
 # 5) Delete Pod Component.
 CMD: kubectl delete -f single-container-pod.yaml
+
+# ConfigMap Commands
+# 1) Create ConfigMap Component.
+CMD: kubectl create -f configmap.yaml
+
+# 2) Check status of ConfigMap
+CMD: kubectl get configmap 
+
+# 3) Getting detail information about particular ConfigMap
+CMD: kubectl describe configmap nginx-configmap
+
+# 4) Delete ConfigMap Component.
+CMD: kubectl delete -f configmap.yaml
+
+# 5) Apply changes to yaml file.
+CMD: kubectl apply -f configmap.yaml
+
+Note: We first create ConfigMap Component and then we create corresponding Pod Component.
+
+# Secret Commands
+# 1) Create Secret Component.
+CMD: kubectl create -f secret.yaml
+
+# 2) Check status of Secret
+CMD: kubectl get secret 
+
+# 3) Getting detail information about particular Secret
+CMD: kubectl describe secret nginx-secret
+
+# 4) Delete Secret Component.
+CMD: kubectl delete -f secret.yaml
+
+# 5) Apply changes to yaml file.
+CMD: kubectl apply -f secret.yaml
+
+Note: We first create Secret Component and then we create corresponding Pod Component.

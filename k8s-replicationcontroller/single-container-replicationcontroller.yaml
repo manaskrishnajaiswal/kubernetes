@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: single-container-replicationcontroller
+spec:
+  replicas: 5
+  selector:
+    app: single-container-pod-app
+  template:
+    # Information about your component - name, unique identifier -> labels
+    metadata:
+      name: single-container-pod
+      labels:
+        app: single-container-pod-app
+    # Signifies actual structure and functionality for your component
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx:latest
+          ports:
+            - containerPort: 80

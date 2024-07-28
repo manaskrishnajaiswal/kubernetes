@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: single-container-deployments
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: single-container-pod-app
+  template:
+    # Information about your component - name, unique identifier -> labels
+    metadata:
+      name: single-container-pod
+      labels:
+        app: single-container-pod-app
+    # Signifies actual structure and functionality for your component
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx:1.26.1
+          ports:
+            - containerPort: 80
